@@ -95,8 +95,6 @@ Send2Trash==1.8.0
 sendgrid==6.9.1
 simpleline==1.8
 six==1.15.0
-slip==0.6.4
-slip.dbus==0.6.4
 smmap==5.0.0
 sos==4.1
 soupsieve==2.2
