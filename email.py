@@ -77,16 +77,17 @@ if authentication_status:
                 with open('Oct And Nov 21 Rolling Forecast 2.xlsx', 'rb') as f:
                      data = f.read()
                      f.close()
-                     encoded_file = base64.b64encode(data).decode()
-                     attachment = Attachment(
+                encoded_file = base64.b64encode(data).decode()
+                attachment = Attachment(
                     FileContent(encoded_file),
                     FileName('Oct And Nov 21 Rolling Forecast 2.xlsx'),
                     FileType('application/vnd.ms-excel'),
                     Disposition('attachment'),
                 )
+                
 
                 message.attachment = attachment
-                
+
                 try:
                     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
                     response = sg.send(message)
