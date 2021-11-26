@@ -8,7 +8,6 @@ base58==2.1.1
 Beaker==1.10.0
 beautifulsoup4==4.9.3
 bleach==4.1.0
-blinker==1.4
 Brlapi==0.8.2
 cachetools==4.2.4
 cffi==1.14.5
