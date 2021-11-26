@@ -76,7 +76,6 @@ pykickstart==3.32
 Pympler==0.9
 pyOpenSSL==20.0.1
 pyparsing==2.4.7
-pyparted==3.11.7
 pyrsistent==0.18.0
 PySocks==1.7.1
 python-augeas==0.5.0
