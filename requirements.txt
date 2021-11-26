@@ -93,7 +93,6 @@ scipy==1.7.2
 seaborn==0.11.2
 Send2Trash==1.8.0
 sendgrid==6.9.1
-sepolicy==3.2
 setools==4.4.0
 simpleline==1.8
 six==1.15.0
