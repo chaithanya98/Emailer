@@ -69,7 +69,6 @@ pycairo==1.20.0
 pycparser==2.20
 pycrypto==2.6.1
 pycups==2.0.1
-pycurl==7.43.0.6
 pydeck==0.7.1
 pyenchant==3.2.0
 Pygments==2.10.0
