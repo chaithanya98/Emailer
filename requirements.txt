@@ -72,7 +72,6 @@ pycups==2.0.1
 pydeck==0.7.1
 pyenchant==3.2.0
 Pygments==2.10.0
-PyGObject==3.40.1
 pykickstart==3.32
 Pympler==0.9
 pyOpenSSL==20.0.1
