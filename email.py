@@ -73,30 +73,28 @@ if authentication_status:
                         # to_emails=[('chaithanya.kumar@stylumia.com')],
                          subject='[Test Email - Email Integration]- Caratlane In-Season Demand Forecasting',
                         html_content='<h3>Hi Everyone PFA , Jan 2022 Dateblock Level TDP and Optimised Predictions</h3>', )
+                    
+                    with open('Oct And Nov 21 Rolling Forecast 2.xlsx', 'rb') as f:
+                        data = f.read()
+                        f.close()
+                    encoded_file = base64.b64encode(data).decode()
+                    attachment = Attachment(
+                        FileContent(encoded_file),
+                        FileName('Oct And Nov 21 Rolling Forecast 2.xlsx'),
+                        FileType('application/vnd.ms-excel'),
+                        Disposition('attachment'),
+                    )
 
-                with open('Oct And Nov 21 Rolling Forecast 2.xlsx', 'rb') as f:
-                     data = f.read()
-                     f.close()
-                encoded_file = base64.b64encode(data).decode()
-                attachment = Attachment(
-                    FileContent(encoded_file),
-                    FileName('Oct And Nov 21 Rolling Forecast 2.xlsx'),
-                    FileType('application/vnd.ms-excel'),
-                    Disposition('attachment'),
-                )
-                
+                    message.attachment = attachment
 
-                message.attachment = attachment
-
-                try:
-                    sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-                    response = sg.send(message)
-                    st.success("Email Sent Successfully")
-                except Exception as e:
-                    st.error("Error While Sending Email")
-                    st.write(e)  
-                    print(e) 
-            break
+                    try:
+                        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+                        response = sg.send(message)
+                        st.success('Email Sent Successfully')
+                    except Exception as e:
+                         st.error("Error While Sending Email")
+                         st.write(e)  
+                         print(e)         
 
 elif authentication_status == False:
     st.error('Username/password is incorrect')
